@@ -63,7 +63,8 @@ $(function () {
       $('h1').text (r.name);
       $('label.i-m[for="u"]').css ({'background-color': r.Colorfirst});
       $s.attr ('c', r.dot.length).append (r.dot.map (function (t, i) { _is[t.dotID] = { i: t.dotICO, c: t.pathColor, w: t.pathWeight }; return $('<option />').val (t.dotID).text (t.dotName); })).change (fm);
-      $('#v').append (r.links.map (function (t) { return $('<a />').addClass ('i-s').attr ('href', t.href).attr ('target', '_blank').text (t.title); })).find ('header').css ({'background-color': r.Colorfirst});
+      $('#v').append (r.links.map (function (t) { return $('<a />').addClass ('i-s').attr ('href', t.href).attr ('target', '_blank').text (t.title); })).find ('header').css ({'background-color': r.Colorfirst}).find ('h2').text (r.name);
+
 
       var k = r.keys[Math.floor ((Math.random() * r.keys.length))], s = document.createElement ('script');
       s.setAttribute ('type', 'text/javascript');
