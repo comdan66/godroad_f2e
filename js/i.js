@@ -22,7 +22,7 @@ $(function () {
   var $l = $('#l'), $s = $('#s'), $t = $('title');
 
   function fm (f) {
-    $.getJSON ('http://map.godroad.tw/API2/getGPSLocation.aspx?SA_ID=' + hash + '&dot=' + $s.val (), function (r) {
+    $.getJSON ('http://gps.godroad.tw/API2/getGPSLocation.aspx?SA_ID=' + hash + '&dot=' + $s.val (), function (r) {
       r = r.map (function (t) { var p = new google.maps.LatLng (t.N, t.E); p._d = t.D; return p; });
 
       _vp.setOptions ({ path: r, strokeColor: _is[$s.val ()].c, strokeWeight: _is[$s.val ()].w });
@@ -54,7 +54,7 @@ $(function () {
     setInterval (fm, _t);
   }
   function flgm (){
-    $.getJSON ('http://map.godroad.tw/API2/getActivityInfo.aspx?SA_ID=' + hash, function (r) {
+    $.getJSON ('http://gps.godroad.tw/API2/getActivityInfo.aspx?SA_ID=' + hash, function (r) {
       if (!(typeof r.name !== 'undefined' && r.name.length > 0)) window.location.replace (_eurl);
 
       $l.removeClass ('b').css ({'background-color': r.Colorfirst});
