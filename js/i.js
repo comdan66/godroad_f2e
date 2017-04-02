@@ -23,7 +23,7 @@ $(function () {
 
   function fm (f) {
     $.getJSON ('http://map.godroad.tw/API2/getGPSLocation.aspx?SA_ID=' + hash + '&dot=' + $s.val (), function (r) {
-      r = r.reverse ().map (function (t) { var p = new google.maps.LatLng (t.N, t.E); p._d = t.D; return p; });
+      r = r.map (function (t) { var p = new google.maps.LatLng (t.N, t.E); p._d = t.D; return p; });
 
       _vp.setOptions ({ path: r, strokeColor: _is[$s.val ()].c, strokeWeight: _is[$s.val ()].w });
 
